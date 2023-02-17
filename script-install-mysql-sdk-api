@@ -1,0 +1,17 @@
+sudo apt update
+sudo apt install -y mysql-server
+sudo systemctl start mysql.service
+mysql --user="root" --password="123456" --execute="ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';"
+
+sudo apt-get update
+sudo apt-get install -y git
+sudo apt-get install -y dotnet-sdk-7.0
+
+git config --global user.name "icaroclaro"
+git config --global user.email "tchelas@gmail.com"
+git clone https://icaroclaro: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@github.com/icaroclaro/bordoes-api.git
+
+
+cd bordoes-api
+dotnet build
+dotnet run
